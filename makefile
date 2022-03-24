@@ -6,7 +6,7 @@
 #    By: amessah <amessah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/10 17:52:01 by amessah           #+#    #+#              #
-#    Updated: 2022/03/21 17:17:34 by amessah          ###   ########.fr        #
+#    Updated: 2022/03/23 16:07:35 by amessah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-INCLUDE = so_long.h
+INCLUDE = so_long_bonus.h
 
-src =	so_long.c	\
+src =	so_long_bonus.c	\
 		ft_utils.c 	\
 		ft_libft_utils.c \
 		ft_libft_utils2.c \
@@ -28,6 +28,9 @@ src =	so_long.c	\
 		mouve.c  	\
 		position.c 	\
 		ft_check.c 	\
+		ft_check2.c	\
+		ft_enemy_mouve.c	\
+		ft_animation.c		\
 		
 OBJECTS = $(src:.c=.o)
 

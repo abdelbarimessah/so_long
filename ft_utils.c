@@ -6,11 +6,11 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:00:56 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 17:21:29 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/23 20:12:50 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {

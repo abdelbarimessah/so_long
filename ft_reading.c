@@ -6,11 +6,11 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:46:39 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 21:17:27 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/23 22:06:56 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	file_check(char *str)
 {
@@ -93,15 +93,16 @@ void	read_xpm(int i, int j)
 	int		fd;
 	char	**tab;
 
-	tab = malloc(7 * sizeof(char *));
+	tab = malloc(8 * sizeof(char *));
 	tab[0] = ft_strdup(C_DOOR);
 	tab[1] = ft_strdup(O_DOOR);
 	tab[2] = ft_strdup(WALL);
 	tab[3] = ft_strdup(PLAYER);
 	tab[4] = ft_strdup(EMPTY);
-	tab[5] = ft_strdup(MONEY);
-	tab[6] = NULL;
-	while (++j < 6)
+	tab[5] = ft_strdup(MONEY1);
+	tab[6] = ft_strdup(ENEMY);
+	tab[7] = NULL;
+	while (++j < 7)
 	{
 		fd = open(tab[i], O_RDONLY);
 		if (fd == -1)
@@ -123,7 +124,7 @@ void	xpm_image(t_long *map)
 			&map->img_w, &map->img_h);
 	map->c_door = mlx_xpm_file_to_image(map->mlx, C_DOOR,
 			&map->img_w, &map->img_h);
-	map->money = mlx_xpm_file_to_image(map->mlx, MONEY,
+	map->money = mlx_xpm_file_to_image(map->mlx, MONEY1,
 			&map->img_w, &map->img_h);
 	map->player = mlx_xpm_file_to_image(map->mlx, PLAYER,
 			&map->img_w, &map->img_h);
@@ -131,7 +132,9 @@ void	xpm_image(t_long *map)
 			&map->img_w, &map->img_h);
 	map->black = mlx_xpm_file_to_image(map->mlx, EMPTY,
 			&map->img_w, &map->img_h);
+	map->enemy = mlx_xpm_file_to_image(map->mlx, ENEMY,
+			&map->img_w, &map->img_h);
 	map->cont = 0;
-	map->win = mlx_new_window(map->mlx, (map->map_len) * 60,
-			(map->map_tall) * 60, "so_long");
+	map->win = mlx_new_window(map->mlx, (map->map_len) * 64,
+			(map->map_tall) * 64, "so_long_with_bonus");
 }

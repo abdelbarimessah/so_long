@@ -6,11 +6,11 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:20:01 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 21:11:31 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/22 18:41:24 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	check_top_bottom_wall(char **str)
 {
@@ -74,7 +74,7 @@ int	check_charcter(char **str)
 		while (k < (int)strlen(line))
 		{
 			if (line[k] != 'P' && line[k] != 'C' && line[k]
-				!= '0' && line[k] != '1' && line[k] != 'E')
+				!= '0' && line[k] != '1' && line[k] != 'E' && line[k] != 'M')
 				return (0);
 			k++;
 		}

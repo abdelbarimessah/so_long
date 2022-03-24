@@ -6,22 +6,20 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:05:08 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 17:05:50 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/23 22:06:13 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	size_t	j;
 	size_t	k;
 	size_t	a;
 	char	*str;
 
 	i = 0;
-	j = 0;
 	k = 0;
 	if (!s1 || !s2)
 		return (NULL);
@@ -33,9 +31,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		while (s1[i])
 			str[k++] = s1[i++];
-		while (s2[j])
-			str[k++] = s2[j++];
+		i = 0;
+		while (s2[i])
+			str[k++] = s2[i++];
 		str[k] = '\0';
+		free((char *)s1);
 		return (str);
 	}
 	return (NULL);
