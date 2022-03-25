@@ -6,36 +6,14 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 15:29:23 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/25 15:32:15 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/24 16:15:07 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-int	check_cloctible(char **str)
-{
-	int	i;
-	int	j;
-	int	cont;
-
-	i = 0;
-	cont = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (str[i][j])
-		{
-			if (str[i][j] == 'C')
-				cont++;
-			j++;
-		}
-		i++;
-	}
-	return (cont);
-}
+#include "so_long_bonus.h"
 
 void	draw(t_long *map, int i, int j)
-{
+{	
 	if (map->wall && map->player && map->o_door
 		&& map->c_door && map->money && map->black)
 	{
@@ -53,13 +31,19 @@ void	draw(t_long *map, int i, int j)
 		else if (map->str[i][j] == '0')
 			mlx_put_image_to_window(map->mlx, map->win, map->black,
 				j * map->img_w, i * map->img_h);
+		else if (map->str[i][j] == 'M')
+			mlx_put_image_to_window(map->mlx, map->win, map->enemy,
+				j * map->img_w, i * map->img_h);
+		mlx_print(map);
 	}
 	else
 		image_not_exist();
 }
 
-void	map_to_windows(t_long *map, int i, int j, char *cont)
+void	map_to_windows(t_long *map, int i, int j, int k)
 {
+	char	*cont;
+
 	i = -1;
 	while (map->str[++i])
 	{
@@ -69,18 +53,22 @@ void	map_to_windows(t_long *map, int i, int j, char *cont)
 			draw(map, i, j);
 		}
 	}
-	cont = ft_itoa(map->cont);
-	write(1, "\ncounter : ", 12);
-	write(1, cont, ft_strlen(cont));
-	free(cont);
+	if (k == 1)
+	{
+		cont = ft_itoa(map->cont);
+		write(1, "\ncounter : ", 12);
+		write(1, cont, ft_strlen(cont));
+		free(cont);
+	}
 }
 
 void	so_long_game(t_long *map)
 {
 	read_xpm(0, -1);
 	xpm_image(map);
-	map_to_windows(map, 0, 0, NULL);
-	mlx_hook(map->win, 2, 1L, mouvement, map);
+	map_to_windows(map, 0, 0, 1);
+	mlx_hook(map->win, 2, 1L << 0, mouvement, map);
+	mlx_loop_hook(map->mlx, enemy_mouvement, map);
 	mlx_hook(map->win, EVENT_CLOSE, 0L, close_win, map);
 	mlx_loop(map->mlx);
 	map = NULL;

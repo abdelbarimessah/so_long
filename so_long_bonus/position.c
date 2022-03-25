@@ -6,11 +6,11 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 18:39:09 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 20:57:28 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/22 15:55:22 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	position_i(char **str)
 {

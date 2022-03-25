@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:45:37 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/24 16:15:24 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/26 00:43:13 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct so_long
 
 size_t	ft_strlen(const char *str);
 size_t	map_lenth(char **str);
-
+int		ft_strcmp(const char *s1, const char *s2);
 int		file_check(char *str);
 int		file_check(char *str);
 int		lenght_comp(char **str);
@@ -95,7 +95,7 @@ char	**map_read(int fd);
 char	**validate(int fd);
 char	*ft_strdup(const char *s1);
 char	*ft_itoa(int n);
-char	**ft_messag(char *str1, char **st2, char **line);
+char	**ft_messag(char *str, char **line);
 
 void	open_close_door(t_long *map, int i, int j);
 void	image_not_exist(void);

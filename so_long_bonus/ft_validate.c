@@ -6,27 +6,11 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:45:57 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/26 00:47:30 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/26 00:47:48 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-void	open_close_door(t_long *map, int i, int j)
-{
-	if (check_cloctible(map->str))
-		mlx_put_image_to_window(map->mlx, map->win, map->c_door,
-			j * map->img_w, i * map->img_h);
-	else
-		mlx_put_image_to_window(map->mlx, map->win, map->o_door,
-			j * map->img_w, i * map->img_h);
-}
-
-void	image_not_exist(void)
-{
-	write(1, "image not existe", 17);
-	exit(1);
-}
+#include "so_long_bonus.h"
 
 char	**ft_messag(char *str1, char **line)
 {
@@ -54,6 +38,8 @@ char	**validate(int fd)
 		ft_messag("check player", line);
 	if (!check_exite_collect(line))
 		ft_messag("check clec and exit", line);
+	if (!check_enemy(line))
+		ft_messag("check enemy", line);
 	return (line);
 }
 

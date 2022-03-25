@@ -1,57 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   position.c                                         :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 18:39:09 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 20:57:28 by amessah          ###   ########.fr       */
+/*   Created: 2022/03/10 17:52:23 by amessah           #+#    #+#             */
+/*   Updated: 2022/03/21 21:13:25 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	position_i(char **str)
+int	main(int argc, char *argv[])
 {
-	int	i;
-	int	j;
+	int		fd;
+	t_long	map;
 
-	i = 0;
-	while (str[i])
+	if (argc == 2 && file_check(argv[1]))
 	{
-		j = 0;
-		while (str[i][j])
+		fd = open(argv[1], O_RDONLY);
+		if (fd < 0)
+			write(1, "error", 5);
+		else
 		{
-			if (str[i][j] == 'P')
-				break ;
-			j++;
+			map.str = validate(fd);
+			if (map.str)
+			{
+				map.map_len = ft_strlen(map.str[0]);
+				map.map_tall = map_lenth(map.str);
+				so_long_game(&map);
+				close(fd);
+				ft_free(map.str);
+			}
 		}
-		if (str[i][j] == 'P')
-			break ;
-		i++;
 	}
-	return (i);
-}
-
-int	position_j(char **str)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (str[i][j])
-		{
-			if (str[i][j] == 'P')
-				break ;
-			j++;
-		}
-		if (str[i][j] == 'P')
-			break ;
-		i++;
-	}
-	return (j);
+	else
+		write(1, "error", 5);
+	return (0);
 }

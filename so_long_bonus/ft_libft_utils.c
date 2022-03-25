@@ -6,11 +6,11 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 23:13:51 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 17:05:59 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/22 15:54:27 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static int	free_thing(char **tab, int index)
 {
