@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 15:29:23 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/24 16:15:07 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 20:24:19 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,8 @@ void	draw(t_long *map, int i, int j)
 		image_not_exist();
 }
 
-void	map_to_windows(t_long *map, int i, int j, int k)
+void	map_to_windows(t_long *map, int i, int j)
 {
-	char	*cont;
-
 	i = -1;
 	while (map->str[++i])
 	{
@@ -53,23 +51,14 @@ void	map_to_windows(t_long *map, int i, int j, int k)
 			draw(map, i, j);
 		}
 	}
-	if (k == 1)
-	{
-		cont = ft_itoa(map->cont);
-		write(1, "\ncounter : ", 12);
-		write(1, cont, ft_strlen(cont));
-		free(cont);
-	}
 }
 
 void	so_long_game(t_long *map)
 {
-	read_xpm(0, -1);
 	xpm_image(map);
-	map_to_windows(map, 0, 0, 1);
+	map_to_windows(map, 0, 0);
 	mlx_hook(map->win, 2, 1L << 0, mouvement, map);
 	mlx_loop_hook(map->mlx, enemy_mouvement, map);
 	mlx_hook(map->win, EVENT_CLOSE, 0L, close_win, map);
 	mlx_loop(map->mlx);
-	map = NULL;
 }

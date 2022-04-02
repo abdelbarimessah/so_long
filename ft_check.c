@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 22:20:01 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 21:11:31 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/31 16:14:29 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,13 +117,13 @@ int	check_exite_collect(char **str)
 	int		cont2;
 	char	*line;
 
-	i = 1;
+	i = 0;
 	j = 0;
 	cont1 = 0;
 	cont2 = 0;
 	while (++i < (int)map_lenth(str))
 	{
-		j = 1;
+		j = 0;
 		line = str[i];
 		while (++j < (int)ft_strlen(line))
 		{

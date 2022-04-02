@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:45:37 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/26 00:43:13 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 20:00:41 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define MONEY2 "./image/rsz_layer_2.xpm"
 # define MONEY3 "./image/rsz_layer_3.xpm"
 # define MONEY4 "./image/rsz_layer_4.xpm"
+# define MONEY5 "./image/layer5.xpm"
+# define MONEY6 "./image/layer6.xpm"
 
 typedef struct so_long
 {
@@ -104,9 +106,8 @@ void	you_lose(t_long *map);
 void	mlx_print(t_long *map);
 void	ft_free(char **tab);
 void	so_long_game(t_long *map);
-void	read_xpm(int i, int j);
 void	xpm_image(t_long *map);
-void	map_to_windows(t_long *map, int i, int j, int k);
+void	map_to_windows(t_long *map, int i, int j);
 void	draw(t_long *map, int i, int j);
 void	coin_animation(t_long *map);
 void	rand_mouve(int key, int i, int j, t_long *map);

@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 19:49:52 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/24 16:14:38 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 19:58:16 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	up_mouve(t_long *map, int i, int j)
 		return (0);
 	if (map->str[i - 1][j] == 'P')
 	{
-		write(1, "\nyou lose\n", 11);
+		write(1, "you lose\n", 10);
 		ft_free(map->str);
-		exit(1);
+		exit(0);
 	}
 	else
 	{
@@ -38,9 +38,9 @@ int	down_mouve(t_long *map, int i, int j)
 		return (0);
 	if (map->str[i + 1][j] == 'P')
 	{
-		write(1, "\nyou lose\n", 11);
+		write(1, "you lose\n", 10);
 		ft_free(map->str);
-		exit(1);
+		exit(0);
 	}
 	else
 	{
@@ -57,9 +57,9 @@ int	left_mouve(t_long *map, int i, int j)
 		return (0);
 	if (map->str[i][j - 1] == 'P')
 	{
-		write(1, "\nyou lose\n", 11);
+		write(1, "you lose\n", 10);
 		ft_free(map->str);
-		exit(1);
+		exit(0);
 	}
 	else
 	{
@@ -76,9 +76,9 @@ int	right_mouve(t_long *map, int i, int j)
 		return (0);
 	if (map->str[i][j + 1] == 'P')
 	{
-		write(1, "\nyou lose\n", 11);
+		write(1, "you lose\n", 10);
 		ft_free(map->str);
-		exit(1);
+		exit(0);
 	}
 	else
 	{

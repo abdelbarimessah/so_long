@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:50:57 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/24 16:11:30 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/29 16:31:12 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,20 @@ int	check_cloctible(char **str)
 
 void	you_lose(t_long *map)
 {
-	write(1, "\nyou lose\n", 11);
+	write(1, "you lose\n", 10);
 	ft_free(map->str);
-	exit(1);
+	exit(0);
 }
 
 void	you_win(t_long *map)
 {
-	write(1, "\ngood game\n", 11);
+	write(1, "good game\n", 10);
 	ft_free(map->str);
 	exit(0);
 }
 
 void	image_not_exist(void)
 {
-	write(1, "image not existe", 17);
+	write(1, "image not existe\n", 18);
 	exit(1);
 }

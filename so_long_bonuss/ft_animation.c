@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:31:49 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/24 16:06:40 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/29 15:52:22 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,23 @@ void	coin_animation(t_long *map)
 {
 	static int	i;
 
-	if (i <= 15)
+	if (i <= 10)
 		map->money = mlx_xpm_file_to_image(map->mlx, MONEY1,
 				&map->img_w, &map->img_h);
-	else if (i <= 30)
+	else if (i <= 20)
 		map->money = mlx_xpm_file_to_image(map->mlx, MONEY2,
 				&map->img_w, &map->img_h);
-	else if (i <= 45)
+	else if (i <= 30)
 		map->money = mlx_xpm_file_to_image(map->mlx, MONEY3,
 				&map->img_w, &map->img_h);
-	else if (i <= 60)
+	else if (i <= 40)
 		map->money = mlx_xpm_file_to_image(map->mlx, MONEY4,
+				&map->img_w, &map->img_h);
+	else if (i <= 50)
+		map->money = mlx_xpm_file_to_image(map->mlx, MONEY6,
+				&map->img_w, &map->img_h);
+	else if (i <= 60)
+		map->money = mlx_xpm_file_to_image(map->mlx, MONEY5,
 				&map->img_w, &map->img_h);
 	i++;
 	if (i == 60)
@@ -77,6 +83,6 @@ int	enemy_mouvement(t_long *map)
 		}
 	}
 	coin_animation(map);
-	map_to_windows(map, 0, 0, 0);
+	map_to_windows(map, 0, 0);
 	return (0);
 }

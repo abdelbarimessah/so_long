@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:00:56 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/23 20:12:50 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/29 16:20:08 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	close_win(int key, void *param)
 {
 	(void)key;
 	(void)param;
-	write(1, "\ngame over !\n", 14);
+	write(1, "game over !\n", 14);
 	exit(0);
 }
 

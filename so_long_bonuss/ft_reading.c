@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:46:39 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/26 00:27:41 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 20:00:32 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,35 +88,6 @@ char	**map_read(int fd)
 	return (map_line);
 }
 
-void	read_xpm(int i, int j)
-{
-	int		fd;
-	char	**tab;
-
-	tab = malloc(8 * sizeof(char *));
-	tab[0] = ft_strdup(C_DOOR);
-	tab[1] = ft_strdup(O_DOOR);
-	tab[2] = ft_strdup(WALL);
-	tab[3] = ft_strdup(PLAYER);
-	tab[4] = ft_strdup(EMPTY);
-	tab[5] = ft_strdup(MONEY1);
-	tab[6] = ft_strdup(ENEMY);
-	tab[7] = NULL;
-	while (++j < 7)
-	{
-		fd = open(tab[i], O_RDONLY);
-		if (fd == -1)
-		{
-			write(1, "ko", 2);
-			close(fd);
-			ft_free(tab);
-			exit(0);
-		}
-		close(fd);
-	}
-	ft_free(tab);
-}
-
 void	xpm_image(t_long *map)
 {
 	map->mlx = mlx_init();
@@ -135,6 +106,6 @@ void	xpm_image(t_long *map)
 	map->enemy = mlx_xpm_file_to_image(map->mlx, ENEMY,
 			&map->img_w, &map->img_h);
 	map->cont = 0;
-	map->win = mlx_new_window(map->mlx, (map->map_len) * 50,
-			(map->map_tall) * 50, "so_long_with_bonus");
+	map->win = mlx_new_window(map->mlx, (map->map_len) * 64,
+			(map->map_tall) * 64, "so_long_with_bonus");
 }

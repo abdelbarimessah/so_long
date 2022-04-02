@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 11:45:57 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/26 00:47:48 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/29 15:53:47 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ char	**validate(int fd)
 
 	line = map_read(fd);
 	if (!line)
-		ft_messag("check line", line);
+	{
+		write(1, "check line\n", 11);
+		exit (1);
+	}
 	if (!lenght_comp(line))
 		ft_messag("check len or map empty", line);
 	if (!check_top_bottom_wall(line))

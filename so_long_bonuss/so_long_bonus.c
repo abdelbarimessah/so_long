@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:52:23 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/26 18:26:09 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 19:43:45 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	main(int argc, char *argv[])
 {
@@ -33,6 +33,7 @@ int	main(int argc, char *argv[])
 				close(fd);
 				ft_free(map.str);
 			}
+			ft_free(map.str);
 		}
 	}
 	else

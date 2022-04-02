@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:52:16 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/26 00:47:22 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 19:35:52 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void	open_close_door(t_long *map, int i, int j);
 void	image_not_exist(void);
 void	ft_free(char **tab);
 void	so_long_game(t_long *map);
-void	read_xpm(int i, int j);
 void	xpm_image(t_long *map);
 void	map_to_windows(t_long *map, int i, int j, char *cont);
 void	draw(t_long *map, int i, int j);

@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:17:38 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 20:56:06 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/29 16:29:48 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	w_mouve(t_long *map, int i, int j)
 	j = position_j(map->str);
 	if (map->str[i - 1][j] == 'E' && !check_cloctible(map->str))
 	{
-		write(1, "\ngg", 3);
+		write(1, "\ngood game", 11);
 		ft_free(map->str);
 		exit(0);
 	}
@@ -47,7 +47,7 @@ int	s_mouve(t_long *map, int i, int j)
 	j = position_j(map->str);
 	if (map->str[i + 1][j] == 'E' && !check_cloctible(map->str))
 	{
-		write(1, "\ngg", 3);
+		write(1, "\ngood game", 11);
 		ft_free(map->str);
 		exit(0);
 	}
@@ -76,7 +76,7 @@ int	a_mouve(t_long *map, int i, int j)
 	j = position_j(map->str);
 	if (map->str[i][j - 1] == 'E' && !check_cloctible(map->str))
 	{
-		write(1, "\ngg", 3);
+		write(1, "\ngood game", 11);
 		ft_free(map->str);
 		exit(0);
 	}
@@ -105,7 +105,7 @@ int	d_mouve(t_long *map, int i, int j)
 	j = position_j(map->str);
 	if (map->str[i][j + 1] == 'E' && !check_cloctible(map->str))
 	{
-		write(1, "\ngg", 3);
+		write(1, "\ngood game", 11);
 		ft_free(map->str);
 		exit(0);
 	}

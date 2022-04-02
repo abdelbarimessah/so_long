@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:05:08 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/21 17:05:50 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/26 18:26:57 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
-	size_t	j;
 	size_t	k;
 	size_t	a;
 	char	*str;
 
 	i = 0;
-	j = 0;
 	k = 0;
 	if (!s1 || !s2)
 		return (NULL);
@@ -33,8 +31,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		while (s1[i])
 			str[k++] = s1[i++];
-		while (s2[j])
-			str[k++] = s2[j++];
+		i = 0;
+		while (s2[i])
+			str[k++] = s2[i++];
+		free((char *)s1);
 		str[k] = '\0';
 		return (str);
 	}

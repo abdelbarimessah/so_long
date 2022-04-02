@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 15:29:23 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/25 15:32:15 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/30 20:24:24 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,9 @@ void	map_to_windows(t_long *map, int i, int j, char *cont)
 
 void	so_long_game(t_long *map)
 {
-	read_xpm(0, -1);
 	xpm_image(map);
 	map_to_windows(map, 0, 0, NULL);
-	mlx_hook(map->win, 2, 1L, mouvement, map);
+	mlx_hook(map->win, 2, 1L << 2, mouvement, map);
 	mlx_hook(map->win, EVENT_CLOSE, 0L, close_win, map);
 	mlx_loop(map->mlx);
-	map = NULL;
 }

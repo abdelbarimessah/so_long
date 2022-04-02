@@ -6,7 +6,7 @@
 /*   By: amessah <amessah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:17:38 by amessah           #+#    #+#             */
-/*   Updated: 2022/03/24 16:05:37 by amessah          ###   ########.fr       */
+/*   Updated: 2022/03/29 16:22:20 by amessah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	w_mouve(t_long *map, int i, int j)
 		map->str[i - 1][j] = 'P';
 	}
 	map->cont++;
-	map_to_windows(map, 0, 0, 1);
+	map_to_windows(map, 0, 0);
 	return (1);
 }
 
@@ -62,7 +62,7 @@ int	s_mouve(t_long *map, int i, int j)
 		map->str[i + 1][j] = 'P';
 	}
 	map->cont++;
-	map_to_windows(map, 0, 0, 1);
+	map_to_windows(map, 0, 0);
 	return (1);
 }
 
@@ -89,7 +89,7 @@ int	a_mouve(t_long *map, int i, int j)
 		map->str[i][j - 1] = 'P';
 	}
 	map->cont++;
-	map_to_windows(map, 0, 0, 1);
+	map_to_windows(map, 0, 0);
 	return (1);
 }
 
@@ -116,7 +116,7 @@ int	d_mouve(t_long *map, int i, int j)
 		map->str[i][j + 1] = 'P';
 	}
 	map->cont++;
-	map_to_windows(map, 0, 0, 1);
+	map_to_windows(map, 0, 0);
 	return (1);
 }
 
@@ -135,7 +135,7 @@ int	mouvement(int key, void *param)
 		d_mouve(map, 0, 0);
 	if (key == KEY_ESC)
 	{
-		write(1, "\ngame over !\n", 14);
+		write(1, "game over !\n", 14);
 		ft_free(map->str);
 		exit(0);
 	}
